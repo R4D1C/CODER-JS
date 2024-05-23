@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Interactivo</title>
+    <link rel="stylesheet" href="./CSS/styles.css">
+</head>
+<body>
+    <div id="contenidoPrincipal">
+        <header>
+            <h1>Simulador de Créditos</h1>
+        </header>
+        <form>
+            <label for="monto">Monto del préstamo:</label>
+            <input type="number" id="monto" name="monto" required>
+            <br>
+            <label for="interes">Tasa de interés (%):</label>
+            <input type="number" id="interes" name="interes" step="0.01" required>
+            <br>
+            <label for="anos">Duración (años):</label>
+            <input type="number" id="anos" name="anos" required>
+            <br>
+            <button type="button">Calcular</button>
+        </form>
+        <h2>Resultado</h2>
+        <div id="resultado">
+            <p>Pago mensual: <span id="pagoMensual"><b>0</b></span></p>
+        </div>
+    </div>
+    
+
+    <script src="./SCRIPTS/scripts.js"></script>
+</body>
+</html>

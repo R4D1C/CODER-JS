@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(72,154,247,1) 70%);
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+header {
+    height: 150px;
+    width: 100%;
+    color: azure;
+    background-color: black;
+    border-bottom: 10px solid gold;
+}
+
+form {
+    margin: 60px 20px ;
+    padding: 20px;
+    border: 2px solid;
+    border-radius: 20px;
+    background: rgb(255,176,36);
+    background: linear-gradient(159deg, rgba(255,176,36,1) 0%, rgba(167,70,252,1) 70%);
+}
+
+h1 {
+    display: block;
+    text-align: center;
+    padding: 50px 0;
+    width: 50%;
+}
+
+label, input {
+    margin: 20px 0;
+}
+
+#contenidoPrincipal {
+    margin: 80px 0 80px 0;
+    padding: 0 10%;
+}

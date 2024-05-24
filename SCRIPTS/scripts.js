@@ -10,25 +10,17 @@ r es la taza de interes mensual
 n es el numero total de pagos
 
 */
+// No se si sea incorrecto poner la Ñ, así que por las dudas la cambio por una N
+function Calculadora (monto, interes, anos) {
+    // Interes pide que se ingrese en porcentajes, Con este calculo lo paso a decimales y lo divido por los meses de un año
+    const intereses = interes / 100 / 12;
+    const pagos = anos * 12;
+    const x = Math.pow(1 + intereses, pagos);
+    const pagoMensual = (monto * x * intereses) / (x - 1);
 
-class Calculadora {
-    constructor(monto,interes,anos) {
-        this.monto = monto;
-        this.interes = interes / 100 / 12;
-        this.anos = anos;
-    }
-
-    calcular(){
-        let pagos = this.anos * 12;
-        let x = Math.pow(1 + this.interes, pagos);
-        let pagoMensual = (this.monto * x * this.interes) / (x - 1);
-
-        console.log(`El pago mensual es de: ${pagoMensual.toFixed(2)}`)
-    }
+    // Muestro el resultado en consola
+    console.log(`El pago mensual es de: ${pagoMensual.toFixed(2)}`);
 }
 
-let cliente1 = new Calculadora(210000, 17, 4);
-let cliente2 = new Calculadora(300000, 17, 2);
-
-cliente1.calcular();
-cliente2.calcular();
+// Llamo a la función y relleno los parámetros
+Calculadora(210000, 17, 4);

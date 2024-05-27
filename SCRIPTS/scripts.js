@@ -12,11 +12,12 @@ n es el numero total de pagos
 */
 // No se si sea incorrecto poner la Ñ, así que por las dudas la cambio por una N
 
-    const monto1 = parseInt(prompt(`Por favor ingrese el monto del crédito`));
-    const interes1 = parseInt(prompt(`Ingrese el índice interés en porcentaje`));
-    const anos1 = parseInt(prompt(`Ingrese los años que tomará pagar el crédito`));
+let calculos = parseInt(prompt("Indique cuantos créditos quiere calcular"))
 
-function Calculadora (monto, interes, anos) {
+function Calculadora () {
+    let monto = parseInt(prompt(`Ingrese el monto del crédito`));
+    let interes = parseInt(prompt(`Ingrese el porcentaje de interés`));
+    let anos = parseInt(prompt(`Ingrese los años que tomará pagar el crédito`));
 
     if (monto > 0 && interes > 0 && monto > 0) {
         // Interes pide que se ingrese en porcentajes, Con este calculo lo paso a decimales y lo divido por los meses de un año
@@ -32,5 +33,8 @@ function Calculadora (monto, interes, anos) {
     }
 }
 
-// Llamo a la función y relleno los parámetros
-Calculadora(monto1, interes1, anos1);
+
+for (let i = 0; i < calculos; i++) {
+    // Llamo a la función y relleno los parámetros
+    Calculadora();
+}

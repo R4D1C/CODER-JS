@@ -12,7 +12,7 @@ n es el numero total de pagos
 */
 // No se si sea incorrecto poner la Ñ, así que por las dudas la cambio por una N
 
-let calculos = parseInt(prompt("Indique cuantos créditos quiere calcular"))
+let calculos = parseInt(prompt("Indique cuantos créditos quiere calcular"));
 
 function Calculadora () {
     let monto = parseInt(prompt(`Ingrese el monto del crédito`));

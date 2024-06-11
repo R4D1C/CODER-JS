@@ -12,29 +12,53 @@ n es el numero total de pagos
 */
 // No se si sea incorrecto poner la Ñ, así que por las dudas la cambio por una N
 
-let calculos = parseInt(prompt("Indique cuantos créditos quiere calcular"));
 
-function Calculadora () {
-    let monto = parseInt(prompt(`Ingrese el monto del crédito`));
-    let interes = parseInt(prompt(`Ingrese el porcentaje de interés`));
-    let anos = parseInt(prompt(`Ingrese los años que tomará pagar el crédito`));
-
-    if (monto > 0 && interes > 0 && monto > 0) {
-        // Interes pide que se ingrese en porcentajes, Con este calculo lo paso a decimales y lo divido por los meses de un año
-        const intereses = interes / 100 / 12;
-        const pagos = anos * 12;
-        const x = Math.pow(1 + intereses, pagos);
-        const pagoMensual = (monto * x * intereses) / (x - 1);
-
-        // Muestro el resultado en consola
-        console.log(`El pago mensual es de: ${pagoMensual.toFixed(2)}`);
-    } else {
-        alert(`Por favor ingrese valores válidos`);
+    class Cliente {
+        constructor(nombre, monto, interes, anos) {
+            this.nombre = nombre;
+            this.monto = monto;
+            this.interes = interes;
+            this.anos = anos;
+        }
     }
-}
-
-
-for (let i = 0; i < calculos; i++) {
-    // Llamo a la función y relleno los parámetros
-    Calculadora();
-}
+    
+    const DB = [
+        new Cliente("Gutierrez Victor", 230000, 6, 4),
+        new Cliente("Martinez Juan", 1300000, 3, 6),
+        new Cliente("Sanchez Carlos", 400000, 12, 2),
+        new Cliente("Perez Gerardo", 600000, 7, 4)
+    ];
+    
+    function buscarApellido(nombre) {
+        // Filtar en la base de datos por el usuario indicado
+        let resultado = DB.filter(cliente => cliente.nombre.toLowerCase().includes(nombre.toLowerCase()));
+    
+        // Función para calcular el pago mensual y mostrarlo
+        function Calculadora(cliente) {
+            let nombre = cliente.nombre;
+            let monto = parseInt(cliente.monto);
+            let interes = parseFloat(cliente.interes);
+            let anos = parseInt(cliente.anos);
+    
+            if (monto > 0 && interes > 0 && anos > 0) {
+                const intereses = interes / 100 / 12; // Convertir interés anual a interés mensual
+                const pagos = anos * 12; // Número total de pagos mensuales
+                const x = Math.pow(1 + intereses, pagos);
+                const pagoMensual = (monto * x * intereses) / (x - 1); // Fórmula del pago mensual
+    
+                console.log(`El cliente es ${nombre} y el pago mensual es de: ${pagoMensual.toFixed(2)}`);
+            } else {
+                console.log(`Por favor ingrese valores válidos`);
+            }
+        }
+    
+        // Llamar a Calculadora para cada cliente encontrado
+        resultado.forEach(cliente => Calculadora(cliente));
+    
+        // Devolver el resultado para visualización adicional si se requiere
+        return resultado;
+    }
+    
+    // Simular la entrada de usuario para pruebas
+    let nombreCli = prompt('Ingrese el nombre del cliente');
+    console.log(buscarApellido(nombreCli));

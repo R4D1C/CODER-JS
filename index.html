@@ -27,22 +27,26 @@
             <input type="text" id="persona" name="persona">
             <button type="button" id="buscar">Buscar</button>
         </form>
-        <h2>Resultado</h2>
-        <div id="resultado">
-            <p id="pagoMensual">Acá visualizará el resultado</p>
+        <div class="contenedorResultado">
+            <h2>Historial:</h2>
+            <div id="historialResultados"></div>
         </div>
     </div>
-    <div class="clientes-contenedor">
-        <div class="clientes-boton">
-            <button type="button" id="ver-clientes">Ver Clientes</button>
-            <button id="ocultar" type="button">Ocultar</button>
+    <div class="contenedor-secundario">
+        <div class="clientes-contenedor">
+            <div class="clientes-boton">
+                <button type="button" id="ver-clientes">Ver Clientes</button>
+                <button id="ocultar" type="button">Ocultar</button>
+            </div>
+            <div class="clientes-contenido">
+                <table id="clientes"></table>
+            </div>
         </div>
-        <div class="clientes-contenido">
-            <table id="clientes">
-            
-            </table>
+        <div id="comentarios">
+            <h2>Algunos de nuestros usuarios dijeron:</h2>
         </div>
     </div>
     <script src="./SCRIPTS/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>

@@ -198,7 +198,7 @@ n es el numero total de pagos
 
             return pagoMensual.toFixed(2)
         } else {
-            pagoResultado.innerText = `Por favor ingrese valores válidos`;
+            return
         }
     };
 
